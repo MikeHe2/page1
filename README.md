@@ -17,3 +17,5 @@ Page1 is the ultimate app for note-taking in the digital and post-AI era.
 - [Vercel](https://vercel.com/): Serverless hosting optimized for Next.js.
 - [Supabase](https://supabase.com/): Relational database, storage, and APIs.
 - [TypeScript](https://www.typescriptlang.org/): Static typing for JavaScript.
+
+## TODO
