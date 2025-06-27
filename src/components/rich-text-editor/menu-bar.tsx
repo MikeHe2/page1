@@ -1,8 +1,9 @@
 import React from "react"
 import { Heading1, Heading2, Heading3, Bold, Italic, Strikethrough, Highlighter, AlignLeft, AlignCenter, AlignRight, AlignJustify, ListOrdered, List } from "lucide-react"
 import { Toggle } from "@radix-ui/react-toggle"
+import { Editor } from '@tiptap/react'
 
-export default function MenuBar({ editor }: { editor: any }) {
+export default function MenuBar({ editor }: { editor: Editor | null }) {
   if (!editor) {
     return null
   }
