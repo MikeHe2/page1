@@ -1,13 +1,13 @@
-import React from "react";
-import {Heading1, Heading2, Heading3, Bold, Italic, Strikethrough, Highlighter, AlignLeft, AlignCenter, AlignRight, AlignJustify, ListOrdered, List, Code} from "lucide-react"
-import { Toggle } from "@radix-ui/react-toggle";
+import React from "react"
+import { Heading1, Heading2, Heading3, Bold, Italic, Strikethrough, Highlighter, AlignLeft, AlignCenter, AlignRight, AlignJustify, ListOrdered, List } from "lucide-react"
+import { Toggle } from "@radix-ui/react-toggle"
 
-export default function MenuBar( {editor} ) {
-    if (!editor) {
+export default function MenuBar({ editor }: { editor: any }) {
+  if (!editor) {
     return null
   }
 
-const options = [
+  const options = [
     {
       name: 'heading1',
       icon: <Heading1 />,
@@ -23,20 +23,24 @@ const options = [
       icon: <Heading3 />,
       onClick: () => editor.chain().focus().toggleHeading({ level: 3 }).run()
     },
-    { name: 'bold',
+    {
+      name: 'bold',
       icon: <Bold />,
       onClick: () => editor.chain().focus().toggleBold().run()
     },
-    { name: 'italic',
+    {
+      name: 'italic',
       icon: <Italic />,
       onClick: () => editor.chain().focus().toggleItalic().run()
     },
-    { name: 'strike',
+    {
+      name: 'strike',
       icon: <Strikethrough />,
       onClick: () => editor.chain().focus().toggleStrike().run()
 
     },
-    { name: 'highlight',
+    {
+      name: 'highlight',
       icon: <Highlighter />,
       onClick: () => editor.chain().focus().toggleHighlight().run()
     },
@@ -50,11 +54,13 @@ const options = [
       icon: <ListOrdered />,
       onClick: () => editor.chain().focus().toggleOrderedList().run()
     },
-    { name: 'alignLeft',
+    {
+      name: 'alignLeft',
       icon: <AlignLeft />,
       onClick: () => editor.chain().focus().setTextAlign('left').run()
     },
-    { name: 'alignCenter',
+    {
+      name: 'alignCenter',
       icon: <AlignCenter />,
       onClick: () => editor.chain().focus().setTextAlign('center').run()
     },
@@ -68,15 +74,15 @@ const options = [
       icon: <AlignJustify />,
       onClick: () => editor.chain().focus().setTextAlign('justify').run()
     }
-  ];
+  ]
 
   return (
     <div className="px-2 mb-1 space-x-4 z-50 text-white">
-    {options.map((option, index) => (
-      <Toggle key={index} onClick={option.onClick}>
-        {option.icon}
-      </Toggle>
-    ))}
+      {options.map((option, index) => (
+        <Toggle key={index} onClick={option.onClick}>
+          {option.icon}
+        </Toggle>
+      ))}
     </div>
   )
 }
